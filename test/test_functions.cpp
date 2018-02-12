@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "test_functions.hpp"
 
 int factorial ( int x ) {
 	int product = 1;
