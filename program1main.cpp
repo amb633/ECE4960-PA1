@@ -10,6 +10,7 @@
 #include "test_functions.hpp"
 #include "int_div_0.hpp"
 #include "float_pt_ops_INF_and_NINF.hpp"
+#include "signed_zero_behavior.hpp"
 #include <limits>  //for the infinity();
 
 using namespace std;
@@ -37,10 +38,14 @@ int main() {
 		cout << " error in divsion " << endl << endl;
 	}*/
     
-    //running this portion to create compiler exception for int divided by 0
+    //**********************************************
+    // Part 2: Integer divided by 0
+    // Running this portion to create compiler exception for int divided by 0
     /*int err = int_div_0(5);
     cout << err << endl;*/
     
+    //**********************************************
+    // Part 4: Floating Point Operations of INF and NINF
     float INF = std::numeric_limits<float>::infinity();
     float NINF = -1*INF;
     
@@ -55,6 +60,17 @@ int main() {
     cout << "This is 1/NINF: " << inverse_func(NINF) << endl;
     cout << "This is sin(NINF): " << sine_func(NINF) << endl;
     cout << "This is e^NINF: "  << expon_func(NINF) << endl;
+    
+    //**********************************************
+    // Part 6: Signed Zero
+    
+    float pos_zero = +0.0;
+    float neg_zero = -0.0;
+    
+    signed_zero_log(pos_zero);
+    signed_zero_log(neg_zero);
+
+    
     
 	return 0;
 }
