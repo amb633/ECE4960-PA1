@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+*.com
+*.dll
+*.o
+*.so
