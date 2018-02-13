@@ -12,9 +12,15 @@
 void test_INF_functions(){
     float INF = numeric_limits<float>::infinity();
 
-    cout<< "Trying the inverse, sine, and exponential function for INF first: " << endl;
-
     cout << "This is 1/INF: " << inverse_func(INF) << endl;
     cout << "This is sin(INF): " << sine_func(INF) << endl;
     cout << "This is e^INF: "  << expon_func(INF) << endl;
+}
+
+void test_NINF_functions(){
+    float NINF = -1*numeric_limits<float>::infinity();
+    
+    cout << "1/NINF= " << inverse_func(NINF) << endl;
+    cout << "sin(NINF)= " << sine_func(NINF) << endl;
+    cout << "e^NINF= "  << expon_func(NINF) << endl;
 }

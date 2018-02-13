@@ -57,22 +57,14 @@ int main() {
     
     //**********************************************
     // Part 4: Floating Point Operations of INF and NINF
-    float INF = std::numeric_limits<float>::infinity();
-    float NINF = -1*INF;
-    
     cout<< "Trying the inverse, sine, and exponential function for INF first: " << endl;
     
-    cout << "This is 1/INF: " << inverse_func(INF) << endl;
-    cout << "This is sin(INF): " << sine_func(INF) << endl;
-    cout << "This is e^INF: "  << expon_func(INF) << endl;
+    test_INF_functions();
     
+    cout << endl;
     cout<< "Trying the inverse, sine, and exponential function for NINF second: " << endl;
     
-    cout << "This is 1/NINF: " << inverse_func(NINF) << endl;
-    cout << "This is sin(NINF): " << sine_func(NINF) << endl;
-    cout << "This is e^NINF: "  << expon_func(NINF) << endl;
-
-    cout << endl;
+    test_NINF_functions();
     
     //**********************************************
     // Part 5: Not a Number
