@@ -11,9 +11,13 @@
 
 void signed_zero_log( float signed_zero ){
     float sign = signbit(signed_zero) ? 1 : -1;
-    //cout << sign << endl;
     for(int i = 20; i>=0; i--){
         float x = sign*i;
         cout << "For x: " << x << "log(x) = " << log(x) << endl;
     }
+}
+
+void signed_zero_sine_inverse( float signed_zero ){
+    float sign = signbit(signed_zero) ? 1 : -1;
+    
 }

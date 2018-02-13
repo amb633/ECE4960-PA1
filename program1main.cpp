@@ -7,7 +7,7 @@
 //
 //
 
-#include "test_functions.hpp"
+#include "overflow.hpp"
 #include "int_div_0.hpp"
 #include "float_pt_ops_INF_and_NINF.hpp"
 #include "signed_zero_behavior.hpp"
@@ -17,32 +17,42 @@ using namespace std;
 
 int main() {
     
-    //testing out that the function link between files works and compiles as expected
-	cout << endl;
-
-	factorial ( 20 );
-	cout << endl;
-
-	fibonacci( 50 );
-	cout << endl;
-
-	/*int int_zero;
-	int zero = 0;
-
-	try {
-		int_zero = 2/zero;
-		throw -1;
-	}
-
-	catch ( int err ) {
-		cout << " error in divsion " << endl << endl;
-	}*/
+    //**********************************************
+    // Part 1: Integer overflows
+    cout << endl;
+    cout << boolalpha;
+    
+    cout << "integer factorial function working?  " << test_factorial_int() << endl;
+    cout << "error test for integer factorial fcn " << test_factorial_int_error() << endl;
+    cout << "overflow test for int factorial fcn  " << test_factorial_int_overflow() << endl;
+    
+    cout << "integer fibonacci function working?  " << test_fibonacci_int() << endl;
+    cout << "error test for integer fibonacci fcn " << test_fibonacci_int_error() << endl;
+    cout << "overflow test for int fibonacci fcn  " << test_fibonacci_int_overflow() << endl;
+    
+    
+    cout << endl;
     
     //**********************************************
     // Part 2: Integer divided by 0
     // Running this portion to create compiler exception for int divided by 0
     /*int err = int_div_0(5);
     cout << err << endl;*/
+    cout << "Integer divided by 0: This results in a compiler error" << endl;
+    
+    cout<<endl;
+    
+    //**********************************************
+    // Part 3: Floating Point Overflows
+    cout << "double  factorial function working? " << test_factorial_double() << endl;
+    cout << "error test for double factorial fcn " << test_factorial_double_error() << endl;
+    cout << "overflow test for double factorial  " << test_factorial_double_overflow() << endl;
+    
+    cout << "double fibonacci function working?  " << test_fibonacci_double() << endl;
+    cout << "error test for double fibonacci fcn " << test_fibonacci_double_error() << endl;
+    cout << "overflow test for double fibonacci  " << test_fibonacci_double_overflow() << endl;
+    
+    cout<<endl;
     
     //**********************************************
     // Part 4: Floating Point Operations of INF and NINF
