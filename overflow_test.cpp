@@ -33,7 +33,7 @@ bool test_factorial_double_error() {
 
 bool test_factorial_double_overflow() {
 	// test if double factorial function is overflowing
-	if (factorial(200.0) == -2.1) return true;
+	if (factorial(1000.0) == -2.1) return true;
 	else return false;
 }
 

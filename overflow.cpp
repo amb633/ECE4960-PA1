@@ -1,18 +1,19 @@
 # include "overflow.hpp"
 
 int factorial ( int x ) {
-	// error detection : x cannot be less than 1
-	if (x <= 0) return -1;
+	// error detection : x cannot be less than 0
+	if ( x< 0 ) return -1;
+	if ( x == 0 ) return 0;
 
 	int product = 1;
-	int product_prev;
-	for ( int i = 1 ; i <= x ; i++ ) {
-		product_prev = product;
-		product *= i;
-		//cout << i << " : " << product << endl;
-		if ( product < product_prev ) {
-			cout << endl << " ---------- overflow occured at " << i <<"th iteration ---------- " << endl;
-			cout << i << " : " << product << endl << endl;
+	int temp;
+	for ( int i = 1 ; i <=x ; i++ ) {
+		temp = product*i;
+		if ( temp/i == product )
+			product = temp;
+		else {
+			cout << endl << "--------- overflow occured at " << i <<"th iteration ----------" << endl;
+			cout  << (i-1) << "! = " << product << " but " << i << "! = " << temp << endl << endl;
 			return -2;
 		}
 	}
@@ -20,52 +21,56 @@ int factorial ( int x ) {
 }
 
 double factorial ( double x ) {
-	// error detection : x cannot be less than 1
-	if ( x <= 0.0 ) return -1.1;
+	if ( x < 0.0 ) return -1;
+	if ( x == 0.0) return 0;
 
-	double product = 1;
-	for ( double i = 1 ; i <= x ; i++ ) {
-		product *= i;
-		//cout << i << " : " << product << endl;
-		if ( product == INFINITY ) {
-			cout << endl << " ---------- overflow occured at " << i <<"th iteration ---------- " << endl;
-			cout << i << " : " << product << endl << endl;
+	double product = 1.0;
+	double temp;
+	double inf = 2.0/0.0;
+	for ( double i=1.0 ; i<=x ; i++ ) {
+		temp = product*i;
+		if ( temp != inf ) product = temp;
+		else {
+			cout << endl << "---------- overflow occured at " << i << "th iteration ----------" << endl;
+			cout << (i-1) << "! = " << product << " but " << i << "! = " << temp << endl << endl;
 			return -2.1;
 		}
 	}
 	return product;
 }
 
-int fibonacci( int sequence ) {
+int fibonacci ( int sequence ) {
 	if ( sequence <= 0 ) return -1;
 	int sum = 1;
-	int sum_prev = 1;
+	int sum_prev = 1; 
+
 	for ( int i = 3 ; i <= sequence ; i++ ) {
 		int temp = sum;
 		sum += sum_prev;
-		sum_prev = temp;
-		//cout << i << " : " << sum << endl;
-		if (sum<sum_prev) {
-			cout << endl << " ---------- overflow occured at " << i <<"th iteration ---------- " << endl;
-			cout << i << " : " << sum << endl << endl;
+		if ( sum_prev > 0 && temp > 0 && sum < 0 || sum-sum_prev != temp ) {
+			cout << endl << "--------- overflow occured at " << i <<"th iteration ----------" << endl;
+			cout << (i-1) << "th term = " << temp << " but " << i <<"th term = " << sum << endl << endl;
 			return -2;
 		}
+		else sum_prev = temp;
 	}
 	return sum;
 }
+
 
 double fibonacci( double sequence ) {
 	if ( sequence <= 0 ) return -1.1;
 	double sum = 1;
 	double sum_prev = 1;
+	double inf = 2.0/0.0;
 	for ( double i = 3 ; i <= sequence ; i++ ) {
 		double temp = sum;
 		sum += sum_prev;
 		sum_prev = temp;
 		//cout << i << " : " << sum << endl;
-		if (sum==INFINITY) {
-			cout << endl << " ---------- overflow occured at " << i <<"th iteration ---------- " << endl;
-			cout << i << " : " << sum << endl << endl;
+		if (sum==inf) {
+			cout << endl << "--------- overflow occured at " << i <<"th iteration ----------" << endl;
+			cout << (i-1) << "th term = " << temp << " but " << i <<"th term = " << sum << endl << endl;
 			return -2.1;
 		}
 	}
