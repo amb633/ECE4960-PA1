@@ -16,3 +16,5 @@ double sineNan( double x );
 double powerNan( double x , double y );
 
 double infAndNan();
+
+bool detectNan( double x );

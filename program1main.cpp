@@ -85,9 +85,12 @@ int main() {
     cout << "infinty minus infinty returns a " << infLessInf() << endl;
     cout << "infinty divided by infinty returns a " << infDivideInf() << endl;
 
-
-    cout << "detection of NAN: isnan( sqrt(-10)) gives a " << isnan(sqrtNegative(10)) << endl;
-    cout << "detection of NAN: isnan( log(-10) ) gives a " << isnan(logNegative(10)) << endl;
+    cout << "detection of NAN: detectNan(-1) gives a " << detectNan(-1) << endl;
+    cout << "detection of NAN: detectNan(2) gives a " << detectNan(2) << endl;
+    cout << "detection of NAN: detectNan(10) gives a " << detectNan(10) << endl;
+    cout << "detection of NAN: detectNan(inf) gives a " << detectNan(10.0/0.0) << endl;
+    cout << "detection of NAN: detectNan( sqrt(-10)) gives a " << detectNan(sqrtNegative(-10)) << endl;
+    cout << "detection of NAN: detectNan( log(-10) ) gives a " << detectNan(logNegative(-10)) << endl;
 
     cout << "propagation of NAN: adding nan to any number returns a " << addNan( 2 , NAN ) << endl;
     cout << "propagation of NAN: multiplying nan to a number returns a " << multiplyNan( 10 , NAN ) << endl;
@@ -137,6 +140,8 @@ int main() {
     cout << endl << " ---------- Underflow with Sine ---------- " << endl;
     
     underflow_via_sine();
+
+    cout << endl;
     
 	return 0;
 }

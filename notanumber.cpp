@@ -9,11 +9,16 @@ double logNegative ( double x ) {
 }
 
 double infLessInf () {
-	return (INFINITY - INFINITY);
+	// first generate inf
+	double inf = 4.0/0.0;
+	// then generate nan
+	return (inf - inf);
 }
 
 double infDivideInf() {
-	return INFINITY/INFINITY;
+	//first generate inf
+	double inf = 2.0/0.0;
+	return inf/inf;
 }
 
 double addNan( double x , double y ) {
@@ -33,5 +38,16 @@ double powerNan( double x , double y) {
 }
 
 double infAndNan(){
-	return INFINITY + NAN;
+	//first generate inf
+	double inf = 3.0/0.0;
+	//second generate nan
+	double nan = sqrt(-1);
+	//then add them
+	return (inf+nan);
+}
+
+bool detectNan( double x ) {
+	double y = 2.0;
+	if ( !(y == x) && !(y<x) && !(y>x) ) return true;
+	else return false;
 }
