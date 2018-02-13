@@ -12,6 +12,7 @@
 #include "notanumber.hpp"
 #include "float_pt_ops_INF_and_NINF.hpp"
 #include "signed_zero_behavior.hpp"
+#include "underflow.hpp"
 #include <limits>  //for the infinity();
 
 using namespace std;
@@ -95,6 +96,21 @@ int main() {
     signed_zero_log(pos_zero);
     signed_zero_log(neg_zero);
 
+    //**********************************************
+    // Part 6: Signed Zero
+
+    cout << endl << " ---------- Underflow with Subtraction ---------- " << endl;
+    
+    underflow_via_subtraction();
+    
+    cout << endl << " ---------- Underflow with Division ---------- " << endl;
+
+    underflow_via_division();
+
+    cout << endl << " ---------- Underflow with Sine ---------- " << endl;
+
+    underflow_via_sine();
+    cout << endl;
     
     
 	return 0;
