@@ -61,11 +61,21 @@ int main() {
     cout<< "Trying the inverse, sine, and exponential function for INF first: " << endl;
     
     test_INF_functions();
-    
     cout << endl;
+    
     cout<< "Trying the inverse, sine, and exponential function for NINF second: " << endl;
     
     test_NINF_functions();
+    cout << endl;
+    
+    cout<< "Trying the propagation of INF and NINF second: " << endl;
+    test_INF_NINF_propogation();
+    cout << endl;
+    
+    cout<< "Trying the detection of INF and NINF second: " << endl;
+    test_INF_NINF_detection();
+    cout << endl;
+    
     
     //**********************************************
     // Part 5: Not a Number
@@ -93,25 +103,40 @@ int main() {
     float pos_zero = +0.0;
     float neg_zero = -0.0;
     
+    cout<< "Trying the log(x) as x->+0: " << endl;
     signed_zero_log(pos_zero);
+    cout << endl;
+    
+    cout<< "Trying the log(x) as x->-0: " << endl;
     signed_zero_log(neg_zero);
-
+    cout << endl;
+    
+    cout<< "Trying the sin(x)/x as x->+0: " << endl;
+    signed_zero_sine_inverse(pos_zero);
+    cout << endl;
+    
+    cout<< "Trying the sin(x)/x as x->-0: " << endl;
+    signed_zero_sine_inverse(neg_zero);
+    cout << endl;
+    
+    cout<< "Trying the sin(x)/|x| as x->-0: " << endl;
+    signed_zero_sine_abs_inverse(neg_zero);
+    cout << endl;
+    
     //**********************************************
-    // Part 6: Signed Zero
-
+    // Part 7: Floating Point Gradual Underflow
+    
     cout << endl << " ---------- Underflow with Subtraction ---------- " << endl;
     
     underflow_via_subtraction();
     
     cout << endl << " ---------- Underflow with Division ---------- " << endl;
-
-    underflow_via_division();
-
-    cout << endl << " ---------- Underflow with Sine ---------- " << endl;
-
-    underflow_via_sine();
-    cout << endl;
     
+    underflow_via_division();
+    
+    cout << endl << " ---------- Underflow with Sine ---------- " << endl;
+    
+    underflow_via_sine();
     
 	return 0;
 }

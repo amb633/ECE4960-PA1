@@ -26,5 +26,7 @@ float expon_func ( float x );
 
 void test_INF_functions();
 void test_NINF_functions();
+void test_INF_NINF_propogation();
+void test_INF_NINF_detection();
 
 #endif /* float_pt_ops_INF_and_NINF_hpp */

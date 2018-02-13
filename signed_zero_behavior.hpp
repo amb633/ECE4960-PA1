@@ -17,4 +17,6 @@
 using namespace std;
 
 void signed_zero_log( float signed_zero );
+void signed_zero_sine_inverse( float signed_zero );
+void signed_zero_sine_abs_inverse( float signed_zero );
 #endif /* signed_zero_behavior_hpp */
