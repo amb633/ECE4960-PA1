@@ -9,6 +9,7 @@
 
 #include "overflow.hpp"
 #include "int_div_0.hpp"
+#include "notanumber.hpp"
 #include "float_pt_ops_INF_and_NINF.hpp"
 #include "signed_zero_behavior.hpp"
 #include <limits>  //for the infinity();
@@ -70,7 +71,29 @@ int main() {
     cout << "This is 1/NINF: " << inverse_func(NINF) << endl;
     cout << "This is sin(NINF): " << sine_func(NINF) << endl;
     cout << "This is e^NINF: "  << expon_func(NINF) << endl;
+
+    cout << endl;
     
+    //**********************************************
+    // Part 5: Not a Number
+
+    cout << "sqrt of a negative number returns a " << sqrtNegative( -10 ) << endl;
+    cout << "log of a negative number returns a  " << logNegative ( -10 ) << endl;
+    cout << "infinty minus infinty returns a " << infLessInf() << endl;
+    cout << "infinty divided by infinty returns a " << infDivideInf() << endl;
+
+
+    cout << "detection of NAN: isnan( sqrt(-10)) gives a " << isnan(sqrtNegative(10)) << endl;
+    cout << "detection of NAN: isnan( log(-10) ) gives a " << isnan(logNegative(10)) << endl;
+
+    cout << "propagation of NAN: adding nan to any number returns a " << addNan( 2 , NAN ) << endl;
+    cout << "propagation of NAN: multiplying nan to a number returns a " << multiplyNan( 10 , NAN ) << endl;
+    cout << "propagation of NAN: sine of nan returns a " << sineNan(NAN) << endl;
+    cout << "propagation of NAN: power of nan returns a " << powerNan(NAN,2) << endl;
+
+    cout << "interaction with other INF: inf + nan returns " << infAndNan() << endl;
+    cout << endl;
+
     //**********************************************
     // Part 6: Signed Zero
     
