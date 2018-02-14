@@ -44,12 +44,24 @@ void test_INF_NINF_propogation(){
     
 }
 
-void test_INF_NINF_detection(){
-    float INF = numeric_limits<float>::infinity();
-    float NINF = -1*numeric_limits<float>::infinity();
+bool detect_NINF( float NINF_input ){
+    float NINF_generated = -1.0/0.0;
+    float INF_generated = 1.0/0.0;
     
-    cout << "Detection of INF of isinf(INF): " << isinf(INF) << endl;
-    cout << "Detection of INF of isinf(NINF): " << isinf(NINF) << endl;
-    cout << "Detection of INF of isinf(log(0.0)): " << isinf(log(0.0)) << endl;
-    cout << "Detection of INF of isinf(exp(pow(10,20)): " << isinf(exp(pow(10,20))) << endl;
+    if (NINF_input == NINF_generated && NINF_input != INF_generated) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool detect_INF( float INF_input ){
+    float NINF_generated = -1.0/0.0;
+    float INF_generated = 1.0/0.0;
+    
+    if (INF_input != NINF_generated && INF_input == INF_generated) {
+        return true;
+    } else {
+        return false;
+    }
 }

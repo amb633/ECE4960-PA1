@@ -72,8 +72,18 @@ int main() {
     test_INF_NINF_propogation();
     cout << endl;
     
-    cout<< "Trying the detection of INF and NINF second: " << endl;
-    test_INF_NINF_detection();
+    cout<< "Trying the detection of INF and NINF: " << endl;
+    cout<< "detection of INF [EXPECT true]: dectect_INF(exp(pow(10.0,20.0)))= " <<
+    detect_INF(exp(pow(10.0,20.0))) << endl;
+    
+    cout<< "detection of INF [EXPECT false]: dectect_INF(log(0.0))= " <<
+    detect_INF(log(0.0)) << endl;
+    
+    cout<< "detection of NINF [EXPECT true]: dectect_NINF(log(0.0))= " <<
+    detect_NINF(log(0.0)) << endl;
+    
+    cout<< "detection of NINF [EXPECT false]: dectect_NINF(exp(pow(10.0,20.0)))= " <<
+    detect_NINF(exp(pow(10.0,20.0))) << endl;
     cout << endl;
     
     

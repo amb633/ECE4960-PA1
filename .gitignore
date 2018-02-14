@@ -38,5 +38,7 @@
 #Ignore .DS_Store
 .DS_Store
 
+#Ignore program1 executable
+program1
 
 

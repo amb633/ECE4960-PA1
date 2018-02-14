@@ -47,7 +47,7 @@ int fibonacci ( int sequence ) {
 	for ( int i = 3 ; i <= sequence ; i++ ) {
 		int temp = sum;
 		sum += sum_prev;
-		if ( sum_prev > 0 && temp > 0 && sum < 0 || sum-sum_prev != temp ) {
+		if ( ( (sum_prev > 0) && (temp > 0) && (sum < 0) ) || (sum-sum_prev != temp) ) {
 			cout << endl << "--------- overflow occured at " << i <<"th iteration ----------" << endl;
 			cout << (i-1) << "th term = " << temp << " but " << i <<"th term = " << sum << endl << endl;
 			return -2;
