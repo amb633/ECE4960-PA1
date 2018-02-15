@@ -13,6 +13,7 @@
 #include <limits>  //for the infinity();
 #include <math.h> //for sin();
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 

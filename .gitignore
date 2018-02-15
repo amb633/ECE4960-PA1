@@ -41,4 +41,5 @@
 #Ignore program1 executable
 program1
 
-
+#Ignore full_log
+full_log_output.txt
