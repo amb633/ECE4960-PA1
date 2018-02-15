@@ -9,11 +9,13 @@
 
 #include <fstream>
 #include "overflow.hpp"
+#include "overflow.hpp"
 #include "int_div_0.hpp"
 #include "notanumber.hpp"
 #include "float_pt_ops_INF_and_NINF.hpp"
 #include "signed_zero_behavior.hpp"
 #include "underflow.hpp"
+#include "pi_30digits.hpp"
 #include <limits>  //for the infinity();
 
 using namespace std;
@@ -196,6 +198,17 @@ int main() {
     underflow_via_sine();
     full_log.open ("full_log_output.txt", ios_base::app | ios_base::out);
 
+    full_log << endl;
+    
+    //**********************************************
+    // Calculating Pi to the 30th Digit
+    
+    full_log << "\n****************** Calculating Pi to the 30th Digit ******************\n";
+    
+    double test_pi = bit_pi_equation(0,10);
+    full_log.precision(16);
+    full_log << "This is test_pi for: " << test_pi << std::endl;
+    
     full_log << endl;
     
     full_log.close();
