@@ -1,19 +1,23 @@
 #include "underflow.hpp"
 
-bool equals( double x , double y ) {
-	if ( x == y ) return true;
-	else return false;
+void subtract( double x , double y , double& d , bool& u ) {
+	d = x - y;
+	u = false;
+	if ( (d+y) != x ) u = true;
+	return;
 }
 
-double subtract( double x , double y ) {
-	return ( x - y );
+void divide( double x , double y , double& d , bool& u ) {
+	d = x/y;
+	u = false;
+	if ( (d*y) != x ) u = true;
+	return;
 }
 
-double divide( double x , double y ) {
-	return ( x/y );
-}
-
-double sine_fcn( double x ) {
+void sine_fcn( double x , double& d , bool& u ) {
 	double y = sin(1.23456789012345*x);
-	return ( y/x );
+	d = y/x;
+	u = false;
+	if ( (asin(d*x))/1.23456789012345 != x ) u = true;
+	return;
 }

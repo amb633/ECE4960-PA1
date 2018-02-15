@@ -7,10 +7,9 @@
 using namespace std;
 
 /* Primary Functions */
-bool equals( double x , double y );
-double subtract( double x , double y );
-double divide( double x , double y );
-double sine_fcn( double x );
+void subtract( double x , double y , double& d , bool& u );
+void divide( double x , double y , double& d , bool& u );
+void sine_fcn( double x , double& d , bool& u );
 
 /* Test Functions */
 bool test_subtraction();
