@@ -1,7 +1,7 @@
-ECE4960 - Programming Assignment 1 Arithmetic Exception Handling
+# ECE4960 - Programming Assignment 1 Arithmetic Exception Handling
 
 ***************************************************************************
-Part 1 - Observation of Exception Rules
+## Part 1 - Observation of Exception Rules
 ***************************************************************************
 
 Overview: Implementation of programs and functions to observe and detect arithmetic exceptions on C++. 
@@ -70,7 +70,7 @@ underflow_test.cpp shows the test cases of these functions.
 The full log of all exception handling can be viewed at "full_log_output.txt", and a summary can be obtained in IEEE Compliance Report.txt
 
 ***************************************************************************
-Part 2 -  Application of Floating-Point Precision ( #2 )
+## Part 2 -  Application of Floating-Point Precision ( #2 )
 ***************************************************************************
 
 Overview: Implementing quad-precision addition and subtraction of two double-precision floating numbers. This section of the assignment can be found in the "QuadPrecision" folder
