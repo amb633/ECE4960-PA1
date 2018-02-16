@@ -7,7 +7,8 @@
 using namespace std;
 
 /* Primary Functions */
-
+// used function overloading : so that user will be able to call the "same" function regardless
+// of whether they want to perform operations on integers or doubles
 int factorial ( int x );
 double factorial ( double x );
 

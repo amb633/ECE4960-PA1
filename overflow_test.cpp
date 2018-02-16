@@ -1,7 +1,9 @@
 # include "overflow.hpp"
 
+/* Test Functions for Integer and Floating Point Overflows */
+
 bool test_factorial_int() {
-	// test if the integer factorial function is working
+	// test basic functionality of integer factorial function
 	if ( factorial(3) == 6 && factorial(4) ==24 ) return true;
 	else return false;
 	
@@ -20,7 +22,7 @@ bool test_factorial_int_overflow() {
 }
 
 bool test_factorial_double() {
-	// test if the double factorial function is working
+	// test basic functionality of double factorial function
 	if ( factorial(3.0) == 6.0 && factorial(4.0) == 24.0 ) return true;
 	else return false;
 }

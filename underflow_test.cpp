@@ -1,5 +1,6 @@
 #include "underflow.hpp"
 
+// test basic functionality of the subtraction function
 bool test_subtraction() {
 
 	double d1 , d2;
@@ -12,6 +13,7 @@ bool test_subtraction() {
 	else return false;
 }
 
+// test basic functionality of the division function
 bool test_divide() {
 	double d1 , d2;
 	bool u1 , u2;
@@ -22,6 +24,7 @@ bool test_divide() {
 	else return false;
 }
 
+// test the underflow of the subtraction function
 bool underflow_via_subtraction() {
     ofstream full_log;
     full_log.open ("full_log_output.txt", ios_base::app | ios_base::out);
@@ -43,6 +46,7 @@ bool underflow_via_subtraction() {
 	return true;
 }
 
+// test the underflow of the division function
 bool underflow_via_division() {
     ofstream full_log;
     full_log.open ("full_log_output.txt", ios_base::app | ios_base::out);
@@ -62,6 +66,7 @@ bool underflow_via_division() {
 	return true;
 }
 
+// test hte underflow of the sinc function
 bool underflow_via_sine() {
 	double x = 1;
     ofstream full_log;
