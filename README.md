@@ -41,52 +41,52 @@ double fib_dbl = fibonacci(5.0)
 
 - `expon_func( c )` : returns the fp value of `exp(x)`
 
--`detect_INF ( x )` : returns true if input argument x is equal to the fp value of `INF`
+- `detect_INF ( x )` : returns true if input argument x is equal to the fp value of `INF`
 
--`detect_NINF( x )` : returns true if input argument x is equal to the fp value of `NINF`
+- `detect_NINF( x )` : returns true if input argument x is equal to the fp value of `NINF`
 
--`float_pt_ops_INF_and_NINF_tests.cpp` shows the test cases of these functions, and how they handle `inf` as an input argument.
+- `float_pt_ops_INF_and_NINF_tests.cpp` shows the test cases of these functions, and how they handle `inf` as an input argument.
 
 
 *Functions for Operations with NAN*
 
--`sqrtNegative ( x )` : returns the fp value of the square root of the negative of `|x|` 
+- `sqrtNegative ( x )` : returns the fp value of the square root of the negative of `|x|` 
 
--`logNegative ( x )` : returns the fp value of the square root of the natural log of the negative of `|x|`
+- `logNegative ( x )` : returns the fp value of the square root of the natural log of the negative of `|x|`
 
--`infLessInf()` : returns the fp value of `inf - inf`
+- `infLessInf()` : returns the fp value of `inf - inf`
 
--`infDivideInf()` : returns the fp value of `inf/inf`
+- `infDivideInf()` : returns the fp value of `inf/inf`
 
--`addNan( x , y )` : returns fp value of `x + y`
+- `addNan( x , y )` : returns fp value of `x + y`
 
--`multiplyNan( x , y )` : returns fp value of `x*y`
+- `multiplyNan( x , y )` : returns fp value of `x*y`
 
--`sineNan( x )` : returns fp value of `sin(x)`
+- `sineNan( x )` : returns fp value of `sin(x)`
 
--`powerNan( x , y )` : returns fp value of `x^y`
+- `powerNan( x , y )` : returns fp value of `x^y`
 
--`infAndNan()` : return fp value of `inf + nan`
+- `infAndNan()` : return fp value of `inf + nan`
 
--`detectNAN( x )` : returns true is input argument is a `NAN`
+- `detectNAN( x )` : returns true is input argument is a `NAN`
 
 *Functions for Operations with Signed Zeros*
 
--`signed_zero_log( z )` : returns the behaviour of the `log` of a signed zero variable
+- `signed_zero_log( z )` : returns the behaviour of the `log` of a signed zero variable
 
--`signed_zero_sine_inverse( z )` : returns the behaviour of `sin(z)/z`
+- `signed_zero_sine_inverse( z )` : returns the behaviour of `sin(z)/z`
 
--`signed_zero_sine_abs_inverse( z )` : returns the behaviour of `sin(z)/|z|`
+- `signed_zero_sine_abs_inverse( z )` : returns the behaviour of `sin(z)/|z|`
 
 *Functions for Underflow Operations*
 
--`subtract( x , y , d , u )` : stores `d = ( x-y );` and sets `u` to `true` if underflow has occurred
+- `subtract( x , y , d , u )` : stores `d = ( x-y );` and sets `u` to `true` if underflow has occurred
 
--`divide( x , y , d , u )` : stores `d = (x/y);` and sets `u` to `true` if underflow has occurred
+- `divide( x , y , d , u )` : stores `d = (x/y);` and sets `u` to `true` if underflow has occurred
 
--`sine_fcn( x , d , u )` : stores `d = (sin(x))/x` ; and sets `u` to `true` if underflow has occurred
+- `sine_fcn( x , d , u )` : stores `d = (sin(x))/x` ; and sets `u` to `true` if underflow has occurred
 
--`underflow_test.cpp` shows the test cases of these functions.
+- `underflow_test.cpp` shows the test cases of these functions.
 
 The full log of all exception handling can be viewed at "`full_log_output.txt`", and a summary can be obtained in `IEEE Compliance Report.txt`
 
