@@ -4,10 +4,13 @@
 ## Part 1 - Observation of Exception Rules
 ***************************************************************************
 
-Overview: Implementation of programs and functions to observe and detect arithmetic exceptions on C++. 
+**Overview**
+Implementation of programs and functions to observe and detect arithmetic exceptions on C++. 
 
-Usage: Download and run ./make.sh from the command line. Output log for the exception rules will be generated as "full_log_output.txt".
-Documentation and Usage:
+**Usage**
+Download and run ./make.sh from the command line. This will generate an executable called program1. Then, run ./program1 from the command line. Output log for the exception rules will be generated as "full_log_output.txt".
+
+**Documentation**
 
 factorial(n) : overloaded function that will return the result of the factorial operation (n! = n(n-1)(n-2)...(1) ). input argument can be int or double, depending on which version of the function user intends to call. Both versions will return a negative error value if an overflow is generated. 
 
@@ -73,10 +76,13 @@ The full log of all exception handling can be viewed at "full_log_output.txt", a
 ## Part 2 -  Application of Floating-Point Precision ( #2 )
 ***************************************************************************
 
-Overview: Implementing quad-precision addition and subtraction of two double-precision floating numbers. This section of the assignment can be found in the "QuadPrecision" folder
+**Overview**
+Implementing quad-precision addition and subtraction of two double-precision floating numbers. This section of the assignment can be found in the "QuadPrecision" folder
 
-Usage: To run this part, run ./make.sh which uses the g++ compiler to generate the program executable called "quadprecision"
-Run "quadprecision" and the results will be in the "test_log_output.txt"
+**Usage**
+To run this part, run ./make.sh which uses the g++ compiler to generate the program executable called "quadprecision". Run "quadprecision" and the results will be in the "test_log_output.txt"
+
+**Documentation**
 
 The results show 4 test cases of adding and subtracting two double-precision floating numbers and returns the quad-precision floating number result as two double-precision floating point numbers that can then be summed to represent the quad-precision value. 
 
