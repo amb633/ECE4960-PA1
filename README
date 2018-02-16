@@ -1,9 +1,12 @@
 ECE4960 - Programming Assignment 1 Arithmetic Exception Handling
 
+***************************************************************************
+Part 1 - Observation of Exception Rules
+***************************************************************************
+
 Overview: Implementation of programs and functions to observe and detect arithmetic exceptions on C++. 
 
-Usage: Download and run ./make.sh from the command line. Output log for the exception rules will be generated as "full_log_output.txt", and the quad precision log will be stored in " .txt"
-
+Usage: Download and run ./make.sh from the command line. Output log for the exception rules will be generated as "full_log_output.txt".
 Documentation and Usage:
 
 factorial(n) : overloaded function that will return the result of the factorial operation (n! = n(n-1)(n-2)...(1) ). input argument can be int or double, depending on which version of the function user intends to call. Both versions will return a negative error value if an overflow is generated. 
@@ -65,3 +68,36 @@ sine_fcn( x , d , u ) : stores d = (sin(x))/x ; and sets u to true if underflow 
 underflow_test.cpp shows the test cases of these functions.
 
 The full log of all exception handling can be viewed at "full_log_output.txt", and a summary can be obtained in IEEE Compliance Report.txt
+
+***************************************************************************
+Part 2 -  Application of Floating-Point Precision ( #2 )
+***************************************************************************
+
+Overview: Implementing quad-precision addition and subtraction of two double-precision floating numbers. This section of the assignment can be found in the "QuadPrecision" folder
+
+Usage: To run this part, run ./make.sh which uses the g++ compiler to generate the program executable called "quadprecision"
+Run "quadprecision" and the results will be in the "test_log_output.txt"
+
+The results show 4 test cases of adding and subtracting two double-precision floating numbers and returns the quad-precision floating number result as two double-precision floating point numbers that can then be summed to represent the quad-precision value. 
+
+The two main functions for quad-precision implementation are:
+
+addition_precision( number a, number b): returns a result addition_result: this function takes two "number" variables and performs a addition and gives the "result" variable with two double-precision floating point number
+
+ 
+subtract_precision( number a, number b): returns a result subtract_result: this function takes two "number" variables and performs a subtraction and gives the "result" variable with two double-precision floating point number
+
+The two main variable structures that are used are:
+
+number -- composed of:
+- the value of the double precision floating point number
+- the integer part of the double precision floating point number
+- the fraction part of the double precision floating point number
+- the start position of double precision floating point number from the decimal point
+- the end position of double precision floating point number from the decimal point
+
+result -- composed of:
+- most significant precision value of the result which is represented as a "number" structure
+- least significant precision value of the result number which is represented as a "number" structure
+
+
