@@ -9,6 +9,7 @@
 
 #include "float_pt_ops_INF_and_NINF.hpp"
 
+// observe how arithmetic operations work on INF
 void test_INF_functions(){
     float INF = numeric_limits<float>::infinity();
     ofstream full_log;
@@ -20,6 +21,7 @@ void test_INF_functions(){
     full_log.close();
 }
 
+// observe how arithmetic operations work on NINF
 void test_NINF_functions(){
     float NINF = -1*numeric_limits<float>::infinity();
     ofstream full_log;
@@ -30,6 +32,7 @@ void test_NINF_functions(){
     full_log.close();
 }
 
+// observe how INF and NINF are propagated to other variables through arithmetic operations
 void test_INF_NINF_propogation(){
     float INF = numeric_limits<float>::infinity();
     float NINF = -1*numeric_limits<float>::infinity();
@@ -49,26 +52,4 @@ void test_INF_NINF_propogation(){
     full_log << "NINF^INF = "  << pow(NINF, INF) << endl;
     full_log.close();
     
-}
-
-bool detect_NINF( float NINF_input ){
-    float NINF_generated = -1.0/0.0;
-    float INF_generated = 1.0/0.0;
-    
-    if (NINF_input == NINF_generated && NINF_input != INF_generated) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-bool detect_INF( float INF_input ){
-    float NINF_generated = -1.0/0.0;
-    float INF_generated = 1.0/0.0;
-    
-    if (INF_input != NINF_generated && INF_input == INF_generated) {
-        return true;
-    } else {
-        return false;
-    }
 }

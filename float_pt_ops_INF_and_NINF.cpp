@@ -21,3 +21,31 @@ float sine_func ( float x ){
 float expon_func ( float x ){
     return exp(x);
 }
+
+// custom function to detect NINF 
+bool detect_NINF( float NINF_input ){
+	// first generate inf and ninf
+    float NINF_generated = -1.0/0.0;
+    float INF_generated = 1.0/0.0;
+    
+    // check if the input argument equals ninf, but not inf
+    if (NINF_input == NINF_generated && NINF_input != INF_generated) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// custom function ot detect INF
+bool detect_INF( float INF_input ){
+	// first generate inf and ninf
+    float NINF_generated = -1.0/0.0;
+    float INF_generated = 1.0/0.0;
+    
+    // check if the input argument equals inf, but not ninf
+    if (INF_input != NINF_generated && INF_input == INF_generated) {
+        return true;
+    } else {
+        return false;
+    }
+}
