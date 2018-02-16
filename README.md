@@ -10,7 +10,7 @@ Implementation of programs and functions to observe and detect arithmetic except
 
 **Usage:**
 
-Download and run ./make.sh from the command line. This will generate an executable called program1. Then, run ./program1 from the command line. Output log for the exception rules will be generated as "full_log_output.txt".
+Download and run `./make.sh` from the command line. This will generate an executable called `program1`. Then, run `./program1` from the command line. Output log for the exception rules will be generated as "`full_log_output.txt`".
 
 **Documentation:**
 
@@ -24,55 +24,55 @@ Examples: (for int) `int fib_int = fibonacci(5)` ; (for double) `double fib_dbl 
 
 `overflow_test.cpp` shows instances of test functions that can be used to test the functionality of `factorial()` and `fibonacci()`.
 
-int_div_0( int a ) : function that will divide input argument (integer) a by 0. Will cause program to crash.
+`int_div_0( int a )` : function that will divide input argument a by 0. Will cause program to crash.
 
-inverse_func( x ) : returns the floating point (fp) value of 1.0/x
+`inverse_func( x )` : returns the floating point (fp) value of `1.0/x`
 
-sine_func( x ) : returns the fp value of sin(x)
+`sine_func( x )` : returns the fp value of `sin(x)`
 
-expon_func( c ) : returns the fp value of exp(x)
+`expon_func( c )` : returns the fp value of `exp(x)`
 
-detect_INF ( x ) : returns true if input argument x is equal to the fp value of INF
+`detect_INF ( x )` : returns true if input argument x is equal to the fp value of `INF`
 
-detect_NINF( x ) : returns true if input argument x is equal to the fp value of NINF
+`detect_NINF( x )` : returns true if input argument x is equal to the fp value of `NINF`
 
-float_pt_ops_INF_and_NINF_tests.cpp shows the test cases of these functions, and how they handle inf as an input argument.
+`float_pt_ops_INF_and_NINF_tests.cpp` shows the test cases of these functions, and how they handle `inf` as an input argument.
 
-sqrtNegative ( x ) : returns the fp value of the square root of the negative of |x| 
+`sqrtNegative ( x )` : returns the fp value of the square root of the negative of `|x|` 
 
-logNegative ( x ) : returns the fp value of the square root of the natural log of the negative of |x|
+`logNegative ( x )` : returns the fp value of the square root of the natural log of the negative of `|x|`
 
-infLessInf() : returns the fp value of inf - inf
+`infLessInf()` : returns the fp value of `inf - inf`
 
-infDivideInf() : returns the fp value of inf/inf
+`infDivideInf()` : returns the fp value of `inf/inf`
 
-addNan( x , y ) : returns fp value of x + y
+`addNan( x , y )` : returns fp value of `x + y`
 
-multiplyNan( x , y ) : returns fp value of x*y
+`multiplyNan( x , y )` : returns fp value of `x*y`
 
-sineNan( x ) : returns fp value of sin(x)
+`sineNan( x )` : returns fp value of `sin(x)`
 
-powerNan( x , y ) : returns fp value of x^y
+`powerNan( x , y )` : returns fp value of `x^y`
 
-infAndNan() : return fp value of inf + nan
+`infAndNan()` : return fp value of `inf + nan`
 
-detectNAN( x ) : returns true is input argument is a NAN
+`detectNAN( x )` : returns true is input argument is a `NAN`
 
-signed_zero_log( z ) : returns the behaviour of the log of a signed zero variable
+`signed_zero_log( z )` : returns the behaviour of the `log` of a signed zero variable
 
-signed_zero_sine_inverse( z ) : returns the behaviour of sin(z)/z
+`signed_zero_sine_inverse( z )` : returns the behaviour of `sin(z)/z`
 
-signed_zero_sine_abs_inverse( z ) : returns the behaviour of sin(z)/|z|
+`signed_zero_sine_abs_inverse( z )` : returns the behaviour of `sin(z)/|z|`
 
-subtract( x , y , d , u ) : stores d = ( x-y ); and sets u to true if underflow has occurred
+`subtract( x , y , d , u )` : stores `d = ( x-y );` and sets `u` to `true` if underflow has occurred
 
-divide( x , y , d , u ) : stores d = (x/y); and sets u to true if underflow has occurred
+`divide( x , y , d , u )` : stores `d = (x/y);` and sets `u` to `true` if underflow has occurred
 
-sine_fcn( x , d , u ) : stores d = (sin(x))/x ; and sets u to true if underflow has occurred
+`sine_fcn( x , d , u )` : stores `d = (sin(x))/x` ; and sets `u` to `true` if underflow has occurred
 
-underflow_test.cpp shows the test cases of these functions.
+`underflow_test.cpp` shows the test cases of these functions.
 
-The full log of all exception handling can be viewed at "full_log_output.txt", and a summary can be obtained in IEEE Compliance Report.txt
+The full log of all exception handling can be viewed at "`full_log_output.txt`", and a summary can be obtained in `IEEE Compliance Report.txt`
 
 ***************************************************************************
 ## Part 2 -  Application of Floating-Point Precision ( #2 )
@@ -84,7 +84,7 @@ Implementing quad-precision addition and subtraction of two double-precision flo
 
 **Usage:**
 
-To run this part, run ./make.sh which uses the g++ compiler to generate the program executable called "quadprecision". Run "quadprecision" and the results will be in the "test_log_output.txt"
+To run this part, run `./make.sh` which uses the `g++` compiler to generate the program executable called "`quadprecision`". Run `./quadprecision` and the results will be in the "`test_log_output.txt`"
 
 **Documentation:**
 
@@ -92,22 +92,22 @@ The results show 4 test cases of adding and subtracting two double-precision flo
 
 The two main functions for quad-precision implementation are:
 
-addition_precision( number a, number b): returns a result addition_result: this function takes two "number" variables and performs a addition and gives the "result" variable with two double-precision floating point number
+`addition_precision( number a, number b)`: returns a result addition_result: this function takes two `number` variables and performs a addition and gives the `result` variable with two double-precision floating point number
 
  
-subtract_precision( number a, number b): returns a result subtract_result: this function takes two "number" variables and performs a subtraction and gives the "result" variable with two double-precision floating point number
+`subtract_precision( number a, number b)`: returns a result subtract_result: this function takes two `number` variables and performs a subtraction and gives the `result` variable with two double-precision floating point number
 
 The two main variable structures that are used are:
 
-number -- composed of:
+`number` -- composed of:
 - the value of the double precision floating point number
 - the integer part of the double precision floating point number
 - the fraction part of the double precision floating point number
 - the start position of double precision floating point number from the decimal point
 - the end position of double precision floating point number from the decimal point
 
-result -- composed of:
-- most significant precision value of the result which is represented as a "number" structure
-- least significant precision value of the result number which is represented as a "number" structure
+`result` -- composed of:
+- most significant precision value of the result which is represented as a `number` structure
+- least significant precision value of the result number which is represented as a `number` structure
 
 
