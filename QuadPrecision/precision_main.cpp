@@ -2,9 +2,6 @@
 //  main.cpp
 //  QuadPrecision
 //
-//  Created by Ariana Bruno on 2/14/18.
-//  Copyright © 2018 Ariana Bruno. All rights reserved.
-//
 
 #include <iostream>
 #include <fstream>
@@ -24,6 +21,7 @@ int main(int argc, const char * argv[]) {
     full_log.precision(16);
     full_log << boolalpha;
     
+//    This is testing overlap of one digit
     long double a = 1234567890.123456;
     long double b = 0.000007890123456789012;
     long double a_b_add_expected1 = 1234567890.123463;
@@ -36,6 +34,7 @@ int main(int argc, const char * argv[]) {
     full_log<< a << " - " << b << " = " << a_b_sub_expected1 << " & " << a_b_sub_expected2 << ": " << a_b_correctness_sub << endl;
     full_log<< endl;
 
+//    This is testing overlap of 6 digits
     long double c = 1000000001.000001;
     long double d = 0.100000100100001;
     long double c_d_add_expected1 = 1000000001.100001;
@@ -48,6 +47,7 @@ int main(int argc, const char * argv[]) {
     full_log<< c << " - " << d << " = " << c_d_sub_expected1 << " & " << c_d_sub_expected2 << ": " << c_d_correctness_sub << endl;
     full_log << endl;
     
+//    This is testing overlap of 16 digits as integers
     long double e = 1234567890123456.0;
     long double f = 7890123456789012.0;
     long double e_f_add_expected1 = 9124691346912468.0;
@@ -60,6 +60,7 @@ int main(int argc, const char * argv[]) {
     full_log<< e << " - " << f << " = " << e_f_sub_expected1 << " & " << e_f_sub_expected2 << ": " << e_f_correctness_sub << endl;
     full_log<<endl;
     
+//    This is testing overlap of 16 digits as fractions
     long double g = 0.1234567890123456;
     long double h = 0.7890123456789012;
     long double g_h_add_expected1 = 0.9124691346912468;

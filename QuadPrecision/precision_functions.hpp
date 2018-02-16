@@ -2,8 +2,6 @@
 //  precision_handling.hpp
 //  QuadPrecision
 //
-//  Created by Ariana Bruno on 2/15/18.
-//  Copyright © 2018 Ariana Bruno. All rights reserved.
 //
 
 #ifndef precision_functions_hpp
