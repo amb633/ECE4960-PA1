@@ -1,0 +1,277 @@
+
+
+Program Assignment 1
+By Ariana Bruno and Haritha Murali
+netID: amb633 hm535
+
+****************** Part 1: Integer Overflows ******************
+integer factorial function working?  true
+error test for integer factorial fcn true
+overflow test for int factorial fcn  true
+integer fibonacci function working?  true
+error test for integer fibonacci fcn true
+overflow test for int fibonacci fcn  true
+
+
+****************** Part 2: Integer Divided By 0 ******************
+Integer divided by 0: This results in a compiler error
+
+
+****************** Part 3: Floating Point Overflows ******************
+double  factorial function working? true
+error test for double factorial fcn true
+overflow test for double factorial  true
+double fibonacci function working?  true
+error test for double fibonacci fcn true
+overflow test for double fibonacci  true
+
+
+****************** Part 4: Floating Point Operations of INF and NINF ******************
+Trying the inverse, sine, and exponential function for INF first: 
+This is 1/INF: 0
+This is sin(INF): nan
+This is e^INF: inf
+
+Trying the inverse, sine, and exponential function for NINF second: 
+1/NINF= -0
+sin(NINF)= nan
+e^NINF= 0
+
+Trying the propagation of INF and NINF second: 
+INF + NINF = nan
+INF - NINF = inf
+NINF - INF = -inf
+INF*INF = inf
+INF*NINF = -inf
+NINF*NINF = inf
+INF/INF = nan
+NINF/INF = nan
+INF/NINF = nan
+NINF/NINF = nan
+INF^NINF = 0
+NINF^INF = inf
+
+Trying the detection of INF and NINF: 
+detection of INF [EXPECT true]: dectect_INF(exp(pow(10.0,20.0)))= true
+detection of INF [EXPECT false]: dectect_INF(log(0.0))= false
+detection of NINF [EXPECT true]: dectect_NINF(log(0.0))= true
+detection of NINF [EXPECT false]: dectect_NINF(exp(pow(10.0,20.0)))= false
+
+
+****************** Part 5: Not a Number ******************
+sqrt of a negative number returns a nan
+log of a negative number returns a  nan
+infinty minus infinty returns a nan
+infinty divided by infinty returns a nan
+detection of NAN: detectNan(-1) gives a false
+detection of NAN: detectNan(2) gives a false
+detection of NAN: detectNan(10) gives a false
+detection of NAN: detectNan(inf) gives a false
+detection of NAN: detectNan( sqrt(-10)) gives a true
+detection of NAN: detectNan( log(-10) ) gives a true
+propagation of NAN: adding nan to any number returns a nan
+propagation of NAN: multiplying nan to a number returns a nan
+propagation of NAN: sine of nan returns a nan
+propagation of NAN: power of nan returns a nan
+interaction with other INF: inf + nan returns nan
+
+
+****************** Part 6: Signed Zero ******************
+Trying the log(x) as x->+0: 
+
+------------ 0 behavior for log(x) =  ------------
+For x: 0.02log(x) = -3.91202
+For x: 0.019log(x) = -3.96332
+For x: 0.018log(x) = -4.01738
+For x: 0.017log(x) = -4.07454
+For x: 0.016log(x) = -4.13517
+For x: 0.015log(x) = -4.19971
+For x: 0.014log(x) = -4.2687
+For x: 0.013log(x) = -4.34281
+For x: 0.012log(x) = -4.42285
+For x: 0.011log(x) = -4.50986
+For x: 0.01log(x) = -4.60517
+For x: 0.009log(x) = -4.71053
+For x: 0.008log(x) = -4.82831
+For x: 0.007log(x) = -4.96184
+For x: 0.006log(x) = -5.116
+For x: 0.005log(x) = -5.29832
+For x: 0.004log(x) = -5.52146
+For x: 0.003log(x) = -5.80914
+For x: 0.002log(x) = -6.21461
+For x: 0.001log(x) = -6.90776
+For x: 0log(x) = -inf
+
+Trying the log(x) as x->-0: 
+
+------------ -0 behavior for log(x) =  ------------
+For x: -0.02log(x) = nan
+For x: -0.019log(x) = nan
+For x: -0.018log(x) = nan
+For x: -0.017log(x) = nan
+For x: -0.016log(x) = nan
+For x: -0.015log(x) = nan
+For x: -0.014log(x) = nan
+For x: -0.013log(x) = nan
+For x: -0.012log(x) = nan
+For x: -0.011log(x) = nan
+For x: -0.01log(x) = nan
+For x: -0.009log(x) = nan
+For x: -0.008log(x) = nan
+For x: -0.007log(x) = nan
+For x: -0.006log(x) = nan
+For x: -0.005log(x) = nan
+For x: -0.004log(x) = nan
+For x: -0.003log(x) = nan
+For x: -0.002log(x) = nan
+For x: -0.001log(x) = nan
+For x: -0log(x) = -inf
+
+Trying the sin(x)/x as x->+0: 
+
+------------ 0 behavior for sin(x)/x =  ------------
+For x: 0.02sin(x)/x = 0.999933
+For x: 0.019sin(x)/x = 0.99994
+For x: 0.018sin(x)/x = 0.999946
+For x: 0.017sin(x)/x = 0.999952
+For x: 0.016sin(x)/x = 0.999957
+For x: 0.015sin(x)/x = 0.999963
+For x: 0.014sin(x)/x = 0.999967
+For x: 0.013sin(x)/x = 0.999972
+For x: 0.012sin(x)/x = 0.999976
+For x: 0.011sin(x)/x = 0.99998
+For x: 0.01sin(x)/x = 0.999983
+For x: 0.009sin(x)/x = 0.999987
+For x: 0.008sin(x)/x = 0.999989
+For x: 0.007sin(x)/x = 0.999992
+For x: 0.006sin(x)/x = 0.999994
+For x: 0.005sin(x)/x = 0.999996
+For x: 0.004sin(x)/x = 0.999997
+For x: 0.003sin(x)/x = 0.999999
+For x: 0.002sin(x)/x = 0.999999
+For x: 0.001sin(x)/x = 1
+For x: 0sin(x)/x = nan
+
+Trying the sin(x)/x as x->-0: 
+
+------------ -0 behavior for sin(x)/x =  ------------
+For x: -0.02sin(x)/x = 0.999933
+For x: -0.019sin(x)/x = 0.99994
+For x: -0.018sin(x)/x = 0.999946
+For x: -0.017sin(x)/x = 0.999952
+For x: -0.016sin(x)/x = 0.999957
+For x: -0.015sin(x)/x = 0.999963
+For x: -0.014sin(x)/x = 0.999967
+For x: -0.013sin(x)/x = 0.999972
+For x: -0.012sin(x)/x = 0.999976
+For x: -0.011sin(x)/x = 0.99998
+For x: -0.01sin(x)/x = 0.999983
+For x: -0.009sin(x)/x = 0.999987
+For x: -0.008sin(x)/x = 0.999989
+For x: -0.007sin(x)/x = 0.999992
+For x: -0.006sin(x)/x = 0.999994
+For x: -0.005sin(x)/x = 0.999996
+For x: -0.004sin(x)/x = 0.999997
+For x: -0.003sin(x)/x = 0.999999
+For x: -0.002sin(x)/x = 0.999999
+For x: -0.001sin(x)/x = 1
+For x: -0sin(x)/x = nan
+
+Trying the sin(x)/|x| as x->-0: 
+
+------------ -0 behavior for sin(x)/|x| ------------
+For x: -0.02sin(x)/|x| = -0.999933
+For x: -0.019sin(x)/|x| = -0.99994
+For x: -0.018sin(x)/|x| = -0.999946
+For x: -0.017sin(x)/|x| = -0.999952
+For x: -0.016sin(x)/|x| = -0.999957
+For x: -0.015sin(x)/|x| = -0.999963
+For x: -0.014sin(x)/|x| = -0.999967
+For x: -0.013sin(x)/|x| = -0.999972
+For x: -0.012sin(x)/|x| = -0.999976
+For x: -0.011sin(x)/|x| = -0.99998
+For x: -0.01sin(x)/|x| = -0.999983
+For x: -0.009sin(x)/|x| = -0.999987
+For x: -0.008sin(x)/|x| = -0.999989
+For x: -0.007sin(x)/|x| = -0.999992
+For x: -0.006sin(x)/|x| = -0.999994
+For x: -0.005sin(x)/|x| = -0.999996
+For x: -0.004sin(x)/|x| = -0.999997
+For x: -0.003sin(x)/|x| = -0.999999
+For x: -0.002sin(x)/|x| = -0.999999
+For x: -0.001sin(x)/|x| = -1
+For x: -0sin(x)/|x| = nan
+
+
+****************** Part 7: Floating Point Gradual Underflow ******************
+
+ ---------- Underflow with Subtraction ---------- 
+-0.000875
+-8.75e-05
+-8.75e-06
+-8.75e-07
+-8.75e-08
+-8.75e-09
+-8.75e-10
+-8.75e-11
+-8.75011e-12
+-8.75078e-13
+-8.74856e-14
+-8.65974e-15
+-8.88178e-16
+0
+0
+0
+0
+0
+0
+0
+
+ ---------- Underflow with Division ---------- 
+2.1e-299
+2.1e-300
+2.1e-301
+2.1e-302
+2.1e-303
+2.1e-304
+2.1e-305
+2.1e-306
+2.1e-307
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+ ---------- Underflow with Sine ---------- 
+0.944005725045264365569153142133
+1.23453652908957445255566653941
+1.23456788698732289333293010714
+1.23456789012313650211183357897
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.2345678901234502511385926482
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012344980704938279814
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+1.23456789012345002909398772317
+
+
+****************** Calculating Pi to the 30th Digit ******************
+This is test_pi for: 3.141592653589792
+
