@@ -42,4 +42,4 @@
 program1
 
 #Ignore full_log
-full_log_output.txt
+#full_log_output.txt
